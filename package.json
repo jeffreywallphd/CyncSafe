@@ -15,13 +15,22 @@
   "devDependencies": {
     "cordova-android": "^12.0.1",
     "cordova-browser": "^7.0.0",
-    "cordova-ios": "^7.0.1"
+    "cordova-ios": "^7.0.1",
+    "cordova-plugin-file": "^8.0.1",
+    "cordova-sqlite-storage": "^6.1.0"
   },
   "cordova": {
     "platforms": [
       "browser",
       "android",
       "ios"
-    ]
+    ],
+    "plugins": {
+      "cordova-sqlite-storage": {},
+      "cordova-plugin-file": {}
+    }
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.7"
   }
 }
