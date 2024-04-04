@@ -1,0 +1,83 @@
+
+--Table for Types of Food Restrictions--
+CREATE TABLE Restrictions (
+    RestrictionID INTEGER PRIMARY KEY,
+    RestrctionType INTEGER,
+    Description Text
+);
+
+--Table for the Users Data--
+CREATE TABLE User (
+    UserID INTEGER PRIMARY KEY,
+    UserName Text,
+    Gender TEXT CHECK (Gender IN ('male', 'female', 'non-binary', 'other')),
+    Age Integer,
+    Email Text,
+    Password Text
+);
+
+
+--Table for the types of User Energy
+CREATE TABLE EnergyLevels (
+    EnergyID INTEGER PRIMARY KEY,
+    EnergyLevel Text
+);
+
+INSERT INTO EnergyLevels(EngeryID,EnergyLevel) Values (1,"Low");
+
+
+--Table for FoodReccomendations for Types of Restrctions
+CREATE TABLE FoodRecommendations (
+    RecommendationID INTEGER PRIMARY KEY,
+    FoodItem Text,
+    RestrictionID References Restrctions(RestrictionID)
+);
+
+
+--Table for MenstrualCycle for Females
+CREATE TABLE MenstrualCycle (
+    CycleID INTEGER PRIMARY KEY,
+    StartDate Date,
+    EndDate Date,
+    CycleLength Integer,
+    UserID References User(UserID)
+);
+
+
+--Table for Phases for Mentral Cycle
+CREATE TABLE MenstrualCycle (
+    PhaseID INTEGER PRIMARY KEY,
+    PhaseType Text,
+    CycleID References MenstrualCycle(CycleID)
+);
+
+
+--Table for Sleep Entries
+CREATE TABLE SleepEntries (
+    SleepID INTEGER PRIMARY KEY,
+    SleepDuration Real,
+    SleepDate Date,
+    UserID References User(UserID)
+);
+
+
+--Table for Male Testosterone
+CREATE TABLE TestosteroneLevel (
+    LevelID INTEGER PRIMARY KEY,
+    TestDate Date,
+    Level  TEXT CHECK (Level IN ('High', 'Medium', 'Low')),
+    UserID References User(UserID)
+);
+
+
+--Table for Male Factors for their Testosterone
+CREATE TABLE TestosteroneFactors (
+    FactorID INTEGER PRIMARY KEY,
+    FactorDate Date,
+    FactorType  Integer,
+    FactorDescription Text,
+    FactorImpact Text,
+    UserID References User(UserID)
+);
+
+
