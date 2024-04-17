@@ -46,9 +46,119 @@
         .navbar a.active img {
             filter: brightness(0) invert(1); /* Adjust active button effect */
         }
+
+        #calendar-container {
+            display: flex;
+            flex-direction: column; /* Adjusted to stack items vertically */
+            align-items: center; /* Center the items horizontally */
+            flex-grow: 1; /* Allow the container to grow to take available space */
+        }
+
+        .month-year {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px; /* Reduced margin for better spacing */
+            margin-top: 20px;
+        }
+
+        #calendar {
+            width: 90%; /* Set width to 90% of container */
+            max-width: 1200px; /* Set maximum width */
+            padding: 20px;
+            border: 1px transparent #ccc;
+            border-radius: 5px;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            justify-content: center; /* Center the content horizontally */
+            text-align: center; /* Center all text within the calendar */
+        }
+
+        .day-square {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e8ecf5;
+            font-size: 14px;
+            font-family: Inter;
+            color: #235cdf;
+            font-weight: 400;
+            line-height: 40px;
+        }
+
+        .circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; /* Make the shape a circle */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #E7E7FF;
+            font-size: 14px;
+            font-family: Inter;
+            font-weight: 400;
+            line-height: 40px;
+            text-align: center; /* Center the text within the circle */
+        }
+
+        .date-link {
+            text-decoration: none;
+            color: red; /* Change the color to red */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
+
+<div id="calendar-container">
+    <div class="month-year">April 2024</div> <!-- Moved the month and year text here -->
+
+    <div id="calendar">
+        <div class="day-square">Su</div>
+        <div class="day-square">M</div>
+        <div class="day-square">T</div>
+        <div class="day-square">W</div>
+        <div class="day-square">Th</div>
+        <div class="day-square">F</div>
+        <div class="day-square">S</div>
+
+        <div class="circle">1</div>
+        <div class="circle">2</div>
+        <div class="circle">3</div>
+        <div class="circle">4</div>
+        <div class="circle">5</div>
+        <div class="circle">6</div>
+        <div class="circle">7</div>
+        <div class="circle">8</div>
+        <div class="circle">9</div>
+        <div class="circle">10</div>
+        <div class="circle">11</div>
+        <div class="circle">12</div>
+        <div class="circle">13</div>
+        <div class="circle">14</div>
+        <div class="circle">15</div>
+        <div class="circle">16</div>
+        <div class="circle">17</div>
+        <div class="circle">18</div>
+        <div class="circle">19</div>
+        <div class="circle">20</div>
+        <div class="circle">21</div>
+        <div class="circle">22</div>
+        <div class="circle">23</div>
+        <div class="circle">24</div>
+        <div class="circle">25</div>
+        <div class="circle">26</div>
+        <div class="circle">27</div>
+        <div class="circle">28</div>
+        <div class="circle">29</div>
+        <div class="circle">30</div>
+        <div class="circle"><a href="home.html" class="date-link">31</a></div> <!-- Wrapped only the date "31" in the anchor tag -->
+    </div>
+</div>
 
 <div class="navbar">
     <a class="active" href="home.html"><img src="img/Rectangle 64.png" alt="Home"></a>
@@ -59,3 +169,6 @@
 
 </body>
 </html>
+
+
+
