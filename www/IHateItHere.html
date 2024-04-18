@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #C1CCFF, #FFBEB8); /* Gradient background */
+            color: white; /* Text color */
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.2); /* Transparent white background for navbar */
+            overflow: hidden;
+            display: flex;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .navbar a {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            background-color: transparent;
+        }
+
+        .navbar a:first-child {
+            background-color: rgba(255, 192, 203, 0.5); /* Transparent pink for home link */
+        }
+
+        .navbar a img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .navbar a:hover img {
+            opacity: 0.7;
+        }
+
+        .navbar a.active img {
+            filter: brightness(0) invert(1);
+        }
+
+        /* Added styles for the new links */
+        .middle-links {
+            margin-top: 50px; /* Adjust margin as needed */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px; /* Vertical spacing between questions */
+        }
+
+        .middle-links label {
+            margin: 0; /* Reset margin */
+        }
+
+        .middle-links select, .middle-links input {
+            margin: 0; /* Reset margin */
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            width: 250px; /* Set width for input/select elements */
+            max-width: 100%; /* Limit width to container width */
+        }
+
+        .middle-links select:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+<h1>Application Setup</h1>
+
+<div class="middle-links">
+    <label for="name">What is your name?</label>
+    <input type="text" id="name" placeholder="Enter your name">
+    
+    <label for="age">What is your age?</label>
+    <select id="age">
+        <option value="18-25">18-25</option>
+        <option value="26-35">26-35</option>
+        <option value="36-50">36-50</option>
+        <option value="50+">50+</option>
+    </select>
+
+    <label for="gender">What is your gender?</label>
+    <select id="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <label for="menstrual_cycle">Do you have a menstrual cycle?</label>
+    <select id="menstrual_cycle">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="navbar">
+    <a class="active" href="home.html"><img src="img/Rectangle 64.png" alt="Home"></a>
+    <a href="ExpandedCalendarView.html"><img src="img/calendar.png" alt="Calendar"></a>
+    <a href="profile.html"><img src="img/Avatar.png" alt="Profile"></a>
+    <a href="Settings.html"><img src="img/settings.png" alt="Settings"></a>
+</div>
+
+</body>
+</html>
