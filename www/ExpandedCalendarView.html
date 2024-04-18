@@ -58,7 +58,11 @@
             text-align: center;
             font-size: 24px;
             margin-bottom: 20px; /* Reduced margin for better spacing */
-            margin-top: 20px;
+            margin-top: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 30px;
+            font-weight: 600;
+            color: black;
         }
 
         #calendar {
@@ -110,11 +114,28 @@
             justify-content: center;
             align-items: center;
         }
+        .greeting {
+            font-family: 'Inter', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 36px;
+            color: black;
+            text-align: center;
+            margin-top: 10px;  /*adds space btwn greeting and top of page*/
+            margin-bottom: 10px; /* Add some space below the greeting text */
+        }
+
+        .username {
+            color: #FF2D55;
+        }
+
     </style>
 </head>
 <body>
-
+    <div class="greeting">GOOD MORNING, <span class="username">MELISSA</span></div>
 <div id="calendar-container">
+    <div class="greeting" id="greeting"></div> <!-- Added a div for the greeting -->
+
     <div class="month-year">April 2024</div> <!-- Moved the month and year text here -->
 
     <div id="calendar">
@@ -169,6 +190,3 @@
 
 </body>
 </html>
-
-
-
