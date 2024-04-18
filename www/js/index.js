@@ -23,7 +23,49 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
     // Cordova is now initialized. Have fun!
+    async function initDatabase() {
+        try {
+            var db = window.sqlitePlugin.openDatabase({name: 'CyncSafe.db', location: "default"});
+            alert (cordova.file.applicationDirectory + 'www/schema.spsql');
+            // Resolve the local file system URL for the schema file
+            window.resolveLocalFileSystemURL('file://' + cordova.file.applicationDirectory + 'www/schema.spsql', function(fileEntry) {
+                fileEntry.file(function(file) {
+                    var reader = new FileReader();
+                    reader.onloadend = function() {
+                        // File contents are in this.result
+                        var schema = this.result;
+                        
+                        // Execute the schema in the database
+                        db.exec(schema, function() {
+                           alert("executed Schema")
+                            window.console.log('Schema executed successfully');
+                        }, function(error) {
+                            alert("Error occured")
+                            window.console.error('Error executing schema:', error);
+                        });
+                    };
+                    
+                    // Read the file as text
+                    reader.readAsText(file);
+                }, function(error) {
+                    window.console.error('Error reading file:', error);
+                });
+            }, function(error) {
+                window.console.error('Error resolving file URL:', error);
+            });
+        } catch (error) {
+            window.console.error('Error initializing database:', error);
+        }
+    }    
+      
+    initDatabase();
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     document.getElementById('deviceready').classList.add('ready');
+
+  
 }
+
+
+
+   
